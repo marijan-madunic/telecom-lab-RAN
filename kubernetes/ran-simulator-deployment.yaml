@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ran-simulator
+  labels:
+    app: ran-simulator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ran-simulator
+  template:
+    metadata:
+      labels:
+        app: ran-simulator
+    spec:
+      containers:
+        - name: ran-simulator
+          image: ran-simulator:latest
+          imagePullPolicy: Never
